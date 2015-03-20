@@ -223,7 +223,7 @@ var Library = {
 			
 			if(title.search(search) > -1){
 				console.log("MATCH FOUND!\n===================");
-				console.log(title+" BY "+inv[i].author+" | "+inv[i].length+" PAGES\n===================");
+				console.log(inv[i].title+" BY "+inv[i].author+" | "+inv[i].length+" PAGES\n===================");
 			}
 
 		}
@@ -241,7 +241,7 @@ var Library = {
 			
 			if(author.search(search) > -1){
 				console.log("MATCH FOUND!\n===================");
-				console.log(inv[i].title+" BY "+author+" | "+inv[i].length+" PAGES\n===================");
+				console.log(inv[i].title+" BY "+inv[i].author+" | "+inv[i].length+" PAGES\n===================");
 			}
 
 		}
