@@ -80,7 +80,7 @@ var Library = {
 				this.showInventory();
 				break;
 			case 4:
-				this.showGenres();
+				this.sortByGenres();
 				break;
 			case 5:
 				break;
@@ -137,15 +137,33 @@ var Library = {
 			this.mainMenu();
 	},
 
-	showGenres: function(){
+	sortByGenres: function(){
 		var inv = this.inventory;
-		console.log("FICTION: ");
+		var fiction = [];
+		var nonfiction = [];
+		var other = [];
+
 		for (var i = 0; i < inv.length; i++){
-			if (inv[i].genre.toLowerCase() === 'fiction'){
-				console.log("===================");
-				console.log(inv[i].title+" BY "+inv[i].author);
-			}
 			
+			if (inv[i].genre.toLowerCase() === 'fiction'){
+				fiction.push(inv[i]);	
+			} 
+			else if(inv[i].genre.toLowerCase() === ('nonfiction' || 'non-fiction'){
+				console.log("===================");
+				nonfiction.push(inv[i]);
+			} 
+			else
+			{
+				other.push(inv[i]);
+			}
+		}
+		console.log("|| FICTION: ");
+		
+
+
+
+		f
+
 		}
 
 
