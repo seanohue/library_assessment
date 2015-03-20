@@ -110,11 +110,13 @@ var Library = {
 		console.log("TYPE IN THE TITLE OF THE BOOK YOU WOULD LIKE TO REMOVE");
 		this.showInventory(false);
 		var choice = sget("> ").trim().toLowerCase();
+		var validChoice = false;
 		for(var i = 0; i < inv.length; i++){
 			if (inv[i].title.toLowerCase() === choice){
 				this.removeBook(i);
+				validChoice = true;
 			}
-			else
+			else if (validChoice === false)
 			{
 				console.log("YOUR CHOICE WAS NOT VALID. TRY AGAIN.");
 				this.removeBookMenu();
