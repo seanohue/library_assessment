@@ -71,7 +71,7 @@ var Library = {
 	},
 
 	mainMenu: function(){
-		var choice = this.menu("BOOKS ARE GOOD || READ BOOKS NOW OK\nWELCOME, LIBRARIAN || SELECT OPTION\n===============================",["Add a book to the inventory","Remove a book from the inventory","View inventory","View genres","Search inventory", "Quit"]);
+		var choice = this.menu("BOOKS ARE GOOD || READ BOOKS NOW OK\nWELCOME, LIBRARIAN || SELECT OPTION\n===============================",["Add a book to the inventory","Remove a book from the inventory","View inventory","View genres","Search inventory", "Checkout/Return Book", "Quit"]);
 		switch(choice){
 			case 1:
 				this.addBookMenu();
@@ -88,7 +88,9 @@ var Library = {
 			case 5:
 				this.searchMenu();
 				break;
-			case 6:
+			case 5:
+				this.sortByCheckout();
+			case 7:
 				console.log("GO READ A BOOK");
 				process.exit(0);
 				break;
