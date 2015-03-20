@@ -20,6 +20,8 @@ BONUS: This is a library, so books can be checked in and checked out. Librarians
 4.) View a list of checked-in books only
 */
 
+var sget = require('sget');
+
 var Library = {
 
 	inventory: [],
@@ -32,8 +34,6 @@ var Library = {
 		book.length = length;
 		book.checkedOut = checkedOut;
 	},
-
-	
 
 	addBook: function(title, author, genre, length){
 		var book = new this.Book(title, author, genre, length, false);
@@ -51,11 +51,54 @@ var Library = {
 	menu: function(message, choices) {
 		console.log(message);
 		for(var i = 0; i<choices.length; i++){
-			
+			console.log((i+1)+") "+choices[i]);
+		};
+
+		return this.handleInput(choices.length);
+	},
+
+	handleInput: function(maxChoice){
+		var choice = parseInt(sget("Please enter your choice: ").trim());
+		if (isNaN(choice) || choice > maxChoice || choice < 1){
+			console.log("Please enter the number corresponding to your choice.");
+			return this.handleInput(maxChoice);
+		} else
+			return choice;
+	},
+
+	mainMenu: function(){
+		var choice = this.menu("BOOKS ARE GOOD || READ BOOKS NOW OK\nWELCOME, LIBRARIAN || SELECT OPTION\n===============================",["Add a book to the inventory","Remove a book from the inventory","View inventory","View genres","Search inventory", "Quit"]);
+		switch(choice){
+			case 1:
+				break;
+			case 2:
+				break;
+			case 3:
+				break;
+			case 4:
+				break;
+			case 5:
+				break;
+			case 6:
+				console.log("GO READ A BOOK");
+				process.exit(0);
+				break;
+			default:
+				console.log("ERROR");
+				process.exit(1);
 		}
+	}
 
+	addBookMenu(){
+		var title = sget("ENTER TITLE OF NEW BOOK: ");
+		var author = sget("ENTER AUTHOR OF %s: ",title);
+		var genre = sget("ENTER GENRE OF %s: ", title);
+		var length= sget("ENTER LENGTH (in pages) OF %s: ", title);
 
-
+		this.addBook(title, author, genre, length);
+		
 	}
 
 }
+
+Library.mainMenu();
