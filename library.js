@@ -174,7 +174,7 @@ var Library = {
 	displayByGenres: function(fiction, nonfiction, other){
 		
 		console.log("|| FICTION: ");
-		if(fiction[i]!==undefined){
+		if(fiction[0]!==undefined){
 			for (var i = 0; i <fiction.length; i++){
 				console.log("===================");
 				console.log(fiction[i].title+" BY "+fiction[i].author+" | "+fiction[i].length+" PAGES");
@@ -183,7 +183,7 @@ var Library = {
 		}
 		console.log("===================");
 		console.log("|| NON-FICTION: ");
-		if(nonfiction[i]!==undefined){
+		if(nonfiction[0]!==undefined){
 			for (var i = 0; i <nonfiction.length; i++){
 				console.log("===================");
 				console.log(nonfiction[i].title+" BY "+nonfiction[i].author+" | "+nonfiction[i].length+" PAGES");
@@ -192,7 +192,7 @@ var Library = {
 		}	
 		console.log("===================");
 		console.log("|| OTHER: ");
-		if(other[i]!==undefined){
+		if(other[0]!==undefined){
 			for (var i = 0; i <other.length; i++){
 				console.log("===================");
 				console.log(other[i].title+" BY "+other[i].author+" | "+other[i].length+" PAGES");
@@ -277,15 +277,21 @@ var Library = {
 
 	displayAvailability: function(booksIn, booksOut){
 		console.log("|AVAILABLE BOOKS TO CHECK OUT: ");
-		for(var i = 0; i < booksIn.length; i++){
-			console.log("===================");
-			console.log(booksIn[i].title+" BY "+booksIn[i].author+" | "+booksIn[i].length+" PAGES");
+		if(booksIn[0]!==undefined){
+			for(var i = 0; i < booksIn.length; i++){
+				console.log("===================");
+				console.log(booksIn[i].title+" BY "+booksIn[i].author+" | "+booksIn[i].length+" PAGES");
+			}
 		}
+		else{console.log("NONE")};
 		console.log("|BOOKS TO BE RETURNED: ");
-		for(var i = 0; i < booksIn.length; i++){
-			console.log("===================");
-			console.log(booksOut[i].title+" BY "+booksOut[i].author+" | "+booksOut[i].length+" PAGES");
+		if(booksOut[0]!==undefined){
+			for(var i = 0; i < booksIn.length; i++){
+				console.log("===================");
+				console.log(booksOut[i].title+" BY "+booksOut[i].author+" | "+booksOut[i].length+" PAGES");
+			}
 		}
+		else{console.log("NONE")};
 		console.log("===================\n");
 
 	},
