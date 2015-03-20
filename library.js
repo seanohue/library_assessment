@@ -149,7 +149,7 @@ var Library = {
 			if (inv[i].genre.toLowerCase() === 'fiction'){
 				fiction.push(inv[i]);	
 			} 
-			else if(inv[i].genre.toLowerCase() === ('nonfiction' || 'non-fiction'){
+			else if(inv[i].genre.toLowerCase() === ('nonfiction' || 'non-fiction')){
 			
 				nonfiction.push(inv[i]);
 			} 
@@ -186,26 +186,12 @@ var Library = {
 			console.log(other[i].title+" BY "+other[i].author+" | "+other[i].length+" PAGES");
 			console.log("GENRE: "+other[i].genre);
 		}
-
-
-
-	}
-		
-
-
-
-		f
-
-		}
-
+		console.log("===================");
+		console.log("ARE YOU SATISFIED?");
+		this.mainMenu();
 
 	}
-
-
-
-
-
-
+	
 }
 
 Library.mainMenu();
