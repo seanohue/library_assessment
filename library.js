@@ -274,8 +274,12 @@ var Library = {
 			if(author.search(search) > -1){
 				console.log("MATCH FOUND!\n===================");
 				console.log(inv[i].title+" BY "+inv[i].author+" | "+inv[i].length+" PAGES\n===================");
+				console.log("CHECKED OUT? "+inv[i].checkedOut+"\n===================");
+				if(inv[i].checkedOut === true){
+					console.log("DUE DATE: "+inv[i].dueDate);
+					console.log("CHECKED OUT BY: "+inv[i].customerName);
+				}
 			}
-
 		}
 		
 		console.log("SEARCH COMPLETE");
