@@ -302,8 +302,8 @@ var Library = {
 	changeAvailability: function(){
 		var inv = this.inventory;
 		console.log("TYPE IN THE TITLE OF THE BOOK YOU WOULD LIKE TO CHECK OUT/RETURN");
-		var search = sget("> ");
-
+		var search = sget("> ").trim().toLowerCase();
+		var foundMatch = false;
 		for (var i = 0; i < inv.length; i++){
 			var title = inv[i].title.toLowerCase();
 			
@@ -311,12 +311,18 @@ var Library = {
 				if (inv[i].checkedOut){
 					console.log(inv[i].title+" IS RETURNED. NO FINES... FOR NOW.");
 					inv[i].checkedOut = false;
+					foundMatch = true;
 				}
 				else{
 					console.log(inv[i].title+" IS CHECKED OUT.");
 					inv[i].checkedOut = true;
+					foundMatch = true;
 				}
 			}
+		}
+		if (!foundMatch){
+			console.log("NO MATCHES FOUND FOR THAT TITLE, TRY AGAIN...");
+			this.changeAvailability();
 		}
 		console.log("===================\nDONE WITH SERVICE");
 		this.mainMenu();
