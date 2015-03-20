@@ -88,7 +88,7 @@ var Library = {
 			case 5:
 				this.searchMenu();
 				break;
-			case 5:
+			case 6:
 				this.sortByCheckout();
 			case 7:
 				console.log("GO READ A BOOK");
@@ -273,8 +273,18 @@ var Library = {
 	},
 
 	displayAvailability: function(booksIn, booksOut){
-		console.log("AVAILABLE BOOKS TO CHECK OUT: ");
-		
+		console.log("|AVAILABLE BOOKS TO CHECK OUT: ");
+		for(var i = 0; i < booksIn.length; i++){
+			console.log("===================");
+			console.log(booksIn[i].title+" BY "+booksIn[i].author+" | "+booksIn[i].length+" PAGES");
+		}
+		console.log("|BOOKS TO BE RETURNED: ");
+		for(var i = 0; i < booksIn.length; i++){
+			console.log("===================");
+			console.log(booksOut[i].title+" BY "+booksOut[i].author+" | "+booksOut[i].length+" PAGES");
+		}
+		console.log("===================\n");
+
 	},
 
 	initBooks: function(){
