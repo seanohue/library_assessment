@@ -214,6 +214,43 @@ var Library = {
 			}
 	},
 
+	titleSearch: function(){
+		var search = sget("GOOD. NOW ENTER THE TITLE OF THE BOOK").trim().toLowerCase();
+		var inv = this.inventory;
+		
+		for (var i = 0; i < inv.length; i++){
+			var title = inv[i].title.toLowerCase();
+			
+			if(title.search(search) > -1){
+				console.log("MATCH FOUND!\n===================");
+				console.log(title+" BY "+inv[i].author+" | "+other[i].length+" PAGES\n===================");
+			}
+
+		}
+
+		console.log("SEARCH COMPLETE");
+		this.mainMenu();
+	},
+
+	authorSearch: function(){
+		var search = sget("GOOD. NOW ENTER THE NAME OF THE AUTHOR").trim().toLowerCase();
+		var inv = this.inventory;
+
+		for (var i = 0; i < inv.length; i++){
+			var author = inv[i].author.toLowerCase();
+			
+			if(author.search(search) > -1){
+				console.log("MATCH FOUND!\n===================");
+				console.log(inv[i]title+" BY "+author+" | "+other[i].length+" PAGES\n===================");
+			}
+
+		}
+		
+		console.log("SEARCH COMPLETE");
+		this.mainMenu();
+
+	},
+
 	initBooks: function(){
 		var possibleTitles = ["How To Program", "The ABC's of Painting Stuff", "How I Learned to Fly: a Memoir", "Bananas", "I Like Parakeets, and So Can You", "The Butler Did It"];
 		var possibleAuthors = ["Bob Dole", "John Doe", "Jane Deere", "Sam Handwich", "Neal Gaiman"];
