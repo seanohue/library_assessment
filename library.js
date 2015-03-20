@@ -195,7 +195,7 @@ var Library = {
 				console.log("===================");
 				console.log(nonfiction[i].title+" BY "+nonfiction[i].author+" | "+nonfiction[i].length+" PAGES");
 				console.log("CHECKED OUT? "+nonfiction[i].checkedOut);
-				if(fiction[i].checkedOut === true)
+				if(nonfiction[i].checkedOut === true)
 					console.log("DUE DATE: "+inv[i].dueDate);
 			}
 		}	
