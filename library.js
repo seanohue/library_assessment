@@ -143,6 +143,7 @@ var Library = {
 			console.log("CHECKED OUT? "+inv[i].checkedOut);
 			if(inv[i].checkedOut === true){
 				console.log("DUE DATE: "+inv[i].dueDate);
+				console.log("CHECKED OUT BY: "+inv[i].customerName);
 			}
 		}
 		console.log("===================");
@@ -185,8 +186,10 @@ var Library = {
 				console.log("===================");
 				console.log(fiction[i].title+" BY "+fiction[i].author+" | "+fiction[i].length+" PAGES");
 				console.log("CHECKED OUT? "+fiction[i].checkedOut);
-				if(fiction[i].checkedOut === true)
-				console.log("DUE DATE: "+inv[i].dueDate);
+				if(fiction[i].checkedOut === true){
+					console.log("DUE DATE: "+fiction[i].dueDate);
+					console.log("CHECKED OUT BY: "+fiction[i].customerName);
+				}
 			}
 		}
 		console.log("===================");
@@ -196,8 +199,10 @@ var Library = {
 				console.log("===================");
 				console.log(nonfiction[i].title+" BY "+nonfiction[i].author+" | "+nonfiction[i].length+" PAGES");
 				console.log("CHECKED OUT? "+nonfiction[i].checkedOut);
-				if(nonfiction[i].checkedOut === true)
-					console.log("DUE DATE: "+inv[i].dueDate);
+				if(nonfiction[i].checkedOut === true){
+					console.log("DUE DATE: "+nonfiction[i].dueDate);
+					console.log("CHECKED OUT BY: "+nonfiction[i].customerName);
+				}
 			}
 		}	
 		console.log("===================");
@@ -208,8 +213,10 @@ var Library = {
 				console.log(other[i].title+" BY "+other[i].author+" | "+other[i].length+" PAGES");
 				console.log("GENRE: "+other[i].genre);
 				console.log("CHECKED OUT? "+other[i].checkedOut);
-				if(other[i].checkedOut === true)
-					console.log("DUE DATE: "+inv[i].dueDate);
+				if(other[i].checkedOut === true){
+					console.log("DUE DATE: "+other[i].dueDate);
+					console.log("CHECKED OUT BY: "+other[i].customerName);
+				}
 			}
 		}
 		console.log("===================");
@@ -245,8 +252,10 @@ var Library = {
 				console.log("MATCH FOUND!\n===================");
 				console.log(inv[i].title+" BY "+inv[i].author+" | "+inv[i].length+" PAGES");
 				console.log("CHECKED OUT? "+inv[i].checkedOut+"\n===================");
-				if(inv[i].checkedOut === true)
+				if(inv[i].checkedOut === true){
 					console.log("DUE DATE: "+inv[i].dueDate);
+					console.log("CHECKED OUT BY: "+inv[i].customerName);
+				}
 			}
 
 		}
@@ -305,8 +314,10 @@ var Library = {
 				console.log("===================");
 				console.log(booksOut[i].title+" BY "+booksOut[i].author+" | "+booksOut[i].length+" PAGES");
 				console.log("DUE ON: "+booksOut[i].dueDate);
+				console.log("CHECKED OUT BY: "+booksOut[i].customerName);
 			}
 		}
+		
 		else{console.log("NONE")};
 		console.log("===================\n");
 
@@ -348,7 +359,7 @@ var Library = {
 	},
 
 	getCustomer: function(){
-		return sget("ENTER THE NAME OF THE PATRON: ");
+		return sget("ENTER THE NAME OF THE PATRON: ").trim();
 	},
 
 	initBooks: function(){
