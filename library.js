@@ -116,12 +116,12 @@ var Library = {
 				this.removeBook(i);
 				validChoice = true;
 			}
-			else if (validChoice === false)
+		}
+		if (validChoice === false)
 			{
 				console.log("YOUR CHOICE WAS NOT VALID. TRY AGAIN.");
 				this.removeBookMenu();
 			}
-		}
 		this.mainMenu();
 	},
 
