@@ -75,6 +75,7 @@ var Library = {
 			case 2:
 				break;
 			case 3:
+				this.showInventory();
 				break;
 			case 4:
 				break;
@@ -104,10 +105,17 @@ var Library = {
 	showInventory: function(){
 		var inv = this.inventory;
 		for(var i = 1; i < inv.length; i++){
+			console.log("===================");
 			console.log(inv[i].title+" BY "+inv[i].author+" || "+" GENRE: "+inv[i].genre+" || "+inv[i].length+" PAGES");
+			console.log
 		}
-
+		console.log("===================");
+		console.log("THAT IS ALL.");
+		this.mainMenu();
 	}
+
+
+
 
 }
 
