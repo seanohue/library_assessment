@@ -11,11 +11,12 @@ b.) remove books from the inventory
 c.) view a list of all the books in the library
 d.) view a list of all the books in a given genre
 e.) search for a book by title or author
+---DONE!
 
 BONUS: This is a library, so books can be checked in and checked out. Librarians should also be able to:
 
-1.) Change the checked-in/checked-out status of a copy of a book
-2.) Track the name of the person who has checked out a given book and the date when it is due
+1.) Change the checked-in/checked-out status of a copy of a book -- DONE
+2.) Track the name of the person who has checked out a given book and the date when it is due -- WORKING ON DATE
 3.) Mark a book as overdue
 4.) View a list of checked-in books only
 */
@@ -33,6 +34,7 @@ var Library = {
 		book.genre = genre;
 		book.length = length;
 		book.checkedOut = checkedOut;
+		book.dueDate = null;
 		return book;
 	},
 
@@ -290,6 +292,7 @@ var Library = {
 			for(var i = 0; i < booksIn.length; i++){
 				console.log("===================");
 				console.log(booksOut[i].title+" BY "+booksOut[i].author+" | "+booksOut[i].length+" PAGES");
+				console.log("DUE ON: "+booksOut[i].dueDate);
 			}
 		}
 		else{console.log("NONE")};
@@ -314,8 +317,11 @@ var Library = {
 					foundMatch = true;
 				}
 				else{
+					var d = new Date(2015, 4, 7);
+					d = d.toDateString();
 					console.log(inv[i].title+" IS CHECKED OUT.");
 					inv[i].checkedOut = true;
+					inv[i].dueDate = d;
 					foundMatch = true;
 				}
 			}
