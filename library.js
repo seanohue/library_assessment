@@ -295,6 +295,23 @@ var Library = {
 		else{console.log("NONE")};
 		console.log("===================\n");
 
+		this.changeAvailability();
+
+	},
+
+	changeAvailability: function(){
+		var inv = this.inventory;
+		console.log("TYPE IN THE TITLE OF THE BOOK YOU WOULD LIKE TO CHECK OUT/RETURN");
+		var choice = sget("> ");
+
+		for (var i = 0; i < inv.length; i++){
+			var title = inv[i].title.toLowerCase();
+			
+			if(title.search(search) > -1){
+				console.log("MATCH FOUND!\n===================");
+				console.log(inv[i].title+" BY "+inv[i].author+" | "+inv[i].length+" PAGES");
+				console.log("CHECKED OUT? "+inv[i].checkedOut+"\n===================");
+			}
 	},
 
 	initBooks: function(){
