@@ -140,6 +140,9 @@ var Library = {
 			console.log("===================");
 			console.log(inv[i].title+" BY "+inv[i].author+" || "+" GENRE: "+inv[i].genre+" || "+inv[i].length+" PAGES");
 			console.log("CHECKED OUT? "+inv[i].checkedOut);
+			if(inv[i].checkedOut === true){
+				console.log("DUE DATE: "+inv[i].dueDate);
+			}
 		}
 		console.log("===================");
 		console.log("THAT IS ALL.");
