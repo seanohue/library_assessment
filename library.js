@@ -70,6 +70,7 @@ var Library = {
 		var choice = this.menu("BOOKS ARE GOOD || READ BOOKS NOW OK\nWELCOME, LIBRARIAN || SELECT OPTION\n===============================",["Add a book to the inventory","Remove a book from the inventory","View inventory","View genres","Search inventory", "Quit"]);
 		switch(choice){
 			case 1:
+				this.addBookMenu();
 				break;
 			case 2:
 				break;
@@ -87,16 +88,25 @@ var Library = {
 				console.log("ERROR");
 				process.exit(1);
 		}
-	}
+	},
 
-	addBookMenu(){
-		var title = sget("ENTER TITLE OF NEW BOOK: ");
-		var author = sget("ENTER AUTHOR OF %s: ",title);
-		var genre = sget("ENTER GENRE OF %s: ", title);
-		var length= sget("ENTER LENGTH (in pages) OF %s: ", title);
+	addBookMenu: function(){
+		var title = sget("ENTER TITLE OF NEW BOOK: ").trim();
+		var author = sget("ENTER AUTHOR OF "+title+": ").trim();
+		var genre = sget("ENTER GENRE OF "+title+": ").trim();
+		var length= sget("ENTER LENGTH (in pages) OF "+title+": ").trim();
 
 		this.addBook(title, author, genre, length);
-		
+		this.mainMenu();
+	
+	},
+
+	showInventory: function(){
+		var inv = this.inventory;
+		for(var i = 1; i < inv.length; i++){
+			console.log(inv[i].title+" BY "+inv[i].author+" || "+" GENRE: "+inv[i].genre+" || "+inv[i].length+" PAGES");
+		}
+
 	}
 
 }
