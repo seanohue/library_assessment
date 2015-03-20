@@ -184,6 +184,8 @@ var Library = {
 				console.log("===================");
 				console.log(fiction[i].title+" BY "+fiction[i].author+" | "+fiction[i].length+" PAGES");
 				console.log("CHECKED OUT? "+fiction[i].checkedOut);
+				if(fiction[i].checkedOut === true)
+				console.log("DUE DATE: "+inv[i].dueDate);
 			}
 		}
 		console.log("===================");
@@ -193,6 +195,8 @@ var Library = {
 				console.log("===================");
 				console.log(nonfiction[i].title+" BY "+nonfiction[i].author+" | "+nonfiction[i].length+" PAGES");
 				console.log("CHECKED OUT? "+nonfiction[i].checkedOut);
+				if(fiction[i].checkedOut === true)
+					console.log("DUE DATE: "+inv[i].dueDate);
 			}
 		}	
 		console.log("===================");
@@ -203,6 +207,8 @@ var Library = {
 				console.log(other[i].title+" BY "+other[i].author+" | "+other[i].length+" PAGES");
 				console.log("GENRE: "+other[i].genre);
 				console.log("CHECKED OUT? "+other[i].checkedOut);
+				if(other[i].checkedOut === true)
+					console.log("DUE DATE: "+inv[i].dueDate);
 			}
 		}
 		console.log("===================");
@@ -238,6 +244,8 @@ var Library = {
 				console.log("MATCH FOUND!\n===================");
 				console.log(inv[i].title+" BY "+inv[i].author+" | "+inv[i].length+" PAGES");
 				console.log("CHECKED OUT? "+inv[i].checkedOut+"\n===================");
+				if(inv[i].checkedOut === true)
+					console.log("DUE DATE: "+inv[i].dueDate);
 			}
 
 		}
