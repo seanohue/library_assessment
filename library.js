@@ -284,6 +284,7 @@ var Library = {
 			}
 		}
 		else{console.log("NONE")};
+		console.log("===================");
 		console.log("|BOOKS TO BE RETURNED: ");
 		if(booksOut[0]!==undefined){
 			for(var i = 0; i < booksIn.length; i++){
