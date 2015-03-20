@@ -135,7 +135,7 @@ var Library = {
 		for(var i = 0; i < inv.length; i++){
 			console.log("===================");
 			console.log(inv[i].title+" BY "+inv[i].author+" || "+" GENRE: "+inv[i].genre+" || "+inv[i].length+" PAGES");
-			console.log
+			console.log("CHECKED OUT? "+inv[i].checkedOut);
 		}
 		console.log("===================");
 		console.log("THAT IS ALL.");
