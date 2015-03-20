@@ -44,7 +44,7 @@ var Library = {
 	},
 
 	removeBook: function(choice){
-		this.inventory.splice(choice, 0);
+		this.inventory.splice(choice, 1);
 		console.log ("Book removed!");
 		this.mainMenu();
 	},
@@ -107,7 +107,7 @@ var Library = {
 	removeBookMenu: function(){
 		var inv = this.inventory;
 		console.log("TYPE IN THE TITLE OF THE BOOK YOU WOULD LIKE TO REMOVE");
-		this.showInventory();
+		this.showInventory(false);
 		var choice = sget("> ").trim().toLowerCase();
 		for(var i = 0; i < inv.length; i++){
 			if (inv[i].title.toLowerCase() === choice){
@@ -123,6 +123,7 @@ var Library = {
 	},
 
 	showInventory: function(){
+
 		var inv = this.inventory;
 		for(var i = 0; i < inv.length; i++){
 			console.log("===================");
@@ -131,7 +132,8 @@ var Library = {
 		}
 		console.log("===================");
 		console.log("THAT IS ALL.");
-		this.mainMenu();
+		if (arguments.length === 0)
+			this.mainMenu();
 	}
 
 
