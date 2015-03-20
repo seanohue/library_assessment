@@ -80,6 +80,7 @@ var Library = {
 				this.showInventory();
 				break;
 			case 4:
+				this.showGenres();
 				break;
 			case 5:
 				break;
@@ -134,7 +135,23 @@ var Library = {
 		console.log("THAT IS ALL.");
 		if (arguments.length === 0)
 			this.mainMenu();
+	},
+
+	showGenres: function(){
+		var inv = this.inventory;
+		console.log("FICTION: ");
+		for (var i = 0; i < inv.length; i++){
+			if (inv[i].genre.toLowerCase() === 'fiction'){
+				console.log("===================");
+				console.log(inv[i].title+" BY "+inv[i].author);
+			}
+			
+		}
+
+
 	}
+
+
 
 
 
