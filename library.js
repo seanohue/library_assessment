@@ -39,8 +39,11 @@ var Library = {
 	addBook: function(title, author, genre, length){
 		var book = new this.Book(title, author, genre, length, false);
 		this.inventory.push(book);
-		console.log("Book added!");
-		this.mainMenu();
+		
+		if (arguments.length === 4){
+			console.log("Book added!");
+			this.mainMenu();
+		}
 	},
 
 	removeBook: function(choice){
@@ -192,8 +195,22 @@ var Library = {
 		console.log("ARE YOU SATISFIED?");
 		this.mainMenu();
 
+	},
+
+	initBooks: function(){
+		var possibleTitles = ["How To Program", "The ABC's of Painting Stuff", "How I Learned to Fly: a Memoir", "Bananas", "I Like Parakeets, and So Can You", "The Butler Did It"];
+		var possibleAuthors = ["Bob Dole", "John Doe", "Jane Deere", "Sam Handwich", "Neal Gaiman"];
+		var possibleGenres = ["fiction", "nonfiction", "audiobook", "non-fiction"];
+		var possibleLengths = [222, 138, 345, 818, 33.5];
+
+		var startingBooks = 4;
+
+		for (var i = 0; i < startingBooks; i++){
+			this.addBook(possibleTitles[i], possibleAuthors[i], possibleGenres[i], possibleLengths[i], 'init');
+		}
+
 	}
 	
 }
-
+Library.initBooks();
 Library.mainMenu();
