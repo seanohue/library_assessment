@@ -86,6 +86,7 @@ var Library = {
 				this.sortByGenres();
 				break;
 			case 5:
+				this.searchMenu();
 				break;
 			case 6:
 				console.log("GO READ A BOOK");
@@ -195,6 +196,22 @@ var Library = {
 		console.log("ARE YOU SATISFIED?");
 		this.mainMenu();
 
+	},
+
+	searchMenu: function(){
+		var choice = this.menu("YOU CAN SEARCH USING\n",["Title of Book","Author of Book"]);
+
+		switch(choice){
+			case 1:
+				this.titleSearch();
+				break;
+			case 2:
+				this.authorSearch();
+				break;
+			default:
+				console.log("YOUR CHOICE WAS NOT VALID. TRY AGAIN.");
+				this.searchMenu();
+			}
 	},
 
 	initBooks: function(){
