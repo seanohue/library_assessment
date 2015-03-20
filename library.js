@@ -302,16 +302,24 @@ var Library = {
 	changeAvailability: function(){
 		var inv = this.inventory;
 		console.log("TYPE IN THE TITLE OF THE BOOK YOU WOULD LIKE TO CHECK OUT/RETURN");
-		var choice = sget("> ");
+		var search = sget("> ");
 
 		for (var i = 0; i < inv.length; i++){
 			var title = inv[i].title.toLowerCase();
 			
 			if(title.search(search) > -1){
-				console.log("MATCH FOUND!\n===================");
-				console.log(inv[i].title+" BY "+inv[i].author+" | "+inv[i].length+" PAGES");
-				console.log("CHECKED OUT? "+inv[i].checkedOut+"\n===================");
+				if (inv[i].checkedOut){
+					console.log(inv[i].title+" IS RETURNED. NO FINES... FOR NOW.");
+					inv[i].checkedOut = false;
+				}
+				else{
+					console.log(inv[i].title+" IS CHECKED OUT.");
+					inv[i].checkedOut = true;
+				}
 			}
+		}
+		console.log("===================\nDONE WITH SERVICE");
+		this.mainMenu();
 	},
 
 	initBooks: function(){
