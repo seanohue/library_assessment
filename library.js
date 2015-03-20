@@ -138,6 +138,7 @@ var Library = {
 	},
 
 	sortByGenres: function(){
+		
 		var inv = this.inventory;
 		var fiction = [];
 		var nonfiction = [];
@@ -149,7 +150,7 @@ var Library = {
 				fiction.push(inv[i]);	
 			} 
 			else if(inv[i].genre.toLowerCase() === ('nonfiction' || 'non-fiction'){
-				console.log("===================");
+			
 				nonfiction.push(inv[i]);
 			} 
 			else
@@ -157,7 +158,21 @@ var Library = {
 				other.push(inv[i]);
 			}
 		}
+
+		this.displayByGenres(fiction, nonfiction, other);
+
+	},
+
+	displayByGenres: function(fiction, nonfiction, other){
+		
 		console.log("|| FICTION: ");
+
+		for (var i = 0; i <fiction.length; i++){
+			console.log("===================");
+			console.log(fiction[i].title+" BY "+fiction[i].author+" | "+fiction[i].length+" PAGES");
+		}
+
+	}
 		
 
 
