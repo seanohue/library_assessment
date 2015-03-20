@@ -16,7 +16,7 @@ e.) search for a book by title or author
 BONUS: This is a library, so books can be checked in and checked out. Librarians should also be able to:
 
 1.) Change the checked-in/checked-out status of a copy of a book -- DONE
-2.) Track the name of the person who has checked out a given book and the date when it is due -- WORKING ON DATE
+2.) Track the name of the person who has checked out a given book and the date when it is due -- DATE FINISHED, WORKING ON NAME
 3.) Mark a book as overdue
 4.) View a list of checked-in books only
 */
@@ -35,6 +35,7 @@ var Library = {
 		book.length = length;
 		book.checkedOut = checkedOut;
 		book.dueDate = null;
+		book.customerName = null;
 		return book;
 	},
 
@@ -330,6 +331,7 @@ var Library = {
 				else{
 					var d = new Date(2015, 4, 7);
 					d = d.toDateString();
+					inv[i].customerName = this.getCustomer();
 					console.log(inv[i].title+" IS CHECKED OUT.");
 					inv[i].checkedOut = true;
 					inv[i].dueDate = d;
@@ -343,6 +345,10 @@ var Library = {
 		}
 		console.log("===================\nDONE WITH SERVICE");
 		this.mainMenu();
+	},
+
+	getCustomer: function(){
+		return sget("ENTER THE NAME OF THE PATRON: ");
 	},
 
 	initBooks: function(){
