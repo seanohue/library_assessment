@@ -176,6 +176,7 @@ var Library = {
 		for (var i = 0; i <fiction.length; i++){
 			console.log("===================");
 			console.log(fiction[i].title+" BY "+fiction[i].author+" | "+fiction[i].length+" PAGES");
+			console.log("CHECKED OUT? "+inv[i].checkedOut);
 		}
 		console.log("===================");
 		console.log("|| NON-FICTION: ");
@@ -183,6 +184,7 @@ var Library = {
 		for (var i = 0; i <nonfiction.length; i++){
 			console.log("===================");
 			console.log(nonfiction[i].title+" BY "+nonfiction[i].author+" | "+nonfiction[i].length+" PAGES");
+			console.log("CHECKED OUT? "+inv[i].checkedOut);
 		}
 
 		console.log("===================");
@@ -191,6 +193,7 @@ var Library = {
 			console.log("===================");
 			console.log(other[i].title+" BY "+other[i].author+" | "+other[i].length+" PAGES");
 			console.log("GENRE: "+other[i].genre);
+			console.log("CHECKED OUT? "+inv[i].checkedOut);
 		}
 		console.log("===================");
 		console.log("ARE YOU SATISFIED?");
@@ -223,7 +226,8 @@ var Library = {
 			
 			if(title.search(search) > -1){
 				console.log("MATCH FOUND!\n===================");
-				console.log(inv[i].title+" BY "+inv[i].author+" | "+inv[i].length+" PAGES\n===================");
+				console.log(inv[i].title+" BY "+inv[i].author+" | "+inv[i].length+" PAGES");
+				console.log("CHECKED OUT? "+inv[i].checkedOut+"\n===================");
 			}
 
 		}
