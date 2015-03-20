@@ -44,7 +44,7 @@ var Library = {
 	},
 
 	removeBook: function(choice){
-		this.inventory.splice(choice,0);
+		this.inventory.splice(choice, 0);
 		console.log ("Book removed!");
 		this.mainMenu();
 	},
@@ -74,6 +74,7 @@ var Library = {
 				this.addBookMenu();
 				break;
 			case 2:
+				this.removeBookMenu();
 				break;
 			case 3:
 				this.showInventory();
@@ -101,6 +102,24 @@ var Library = {
 		this.addBook(title, author, genre, length);
 		this.mainMenu();
 	
+	},
+
+	removeBookMenu: function(){
+		var inv = this.inventory;
+		console.log("TYPE IN THE TITLE OF THE BOOK YOU WOULD LIKE TO REMOVE");
+		this.showInventory();
+		var choice = sget("> ").trim().toLowerCase();
+		for(var i = 0; i < inv.length; i++){
+			if (inv[i].title.toLowerCase() === choice){
+				this.removeBook(i);
+			}
+			else
+			{
+				console.log("YOUR CHOICE WAS NOT VALID. TRY AGAIN.");
+				removeBookMenu();
+			}
+		}
+		this.mainMenu();
 	},
 
 	showInventory: function(){
