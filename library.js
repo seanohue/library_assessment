@@ -33,6 +33,7 @@ var Library = {
 		book.genre = genre;
 		book.length = length;
 		book.checkedOut = checkedOut;
+		return book;
 	},
 
 	addBook: function(title, author, genre, length){
@@ -104,7 +105,7 @@ var Library = {
 
 	showInventory: function(){
 		var inv = this.inventory;
-		for(var i = 1; i < inv.length; i++){
+		for(var i = 0; i < inv.length; i++){
 			console.log("===================");
 			console.log(inv[i].title+" BY "+inv[i].author+" || "+" GENRE: "+inv[i].genre+" || "+inv[i].length+" PAGES");
 			console.log
