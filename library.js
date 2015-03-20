@@ -171,6 +171,23 @@ var Library = {
 			console.log("===================");
 			console.log(fiction[i].title+" BY "+fiction[i].author+" | "+fiction[i].length+" PAGES");
 		}
+		console.log("===================");
+		console.log("|| NON-FICTION: ");
+
+		for (var i = 0; i <nonfiction.length; i++){
+			console.log("===================");
+			console.log(nonfiction[i].title+" BY "+nonfiction[i].author+" | "+nonfiction[i].length+" PAGES");
+		}
+
+		console.log("===================");
+		console.log("|| OTHER: ");
+		for (var i = 0; i <other.length; i++){
+			console.log("===================");
+			console.log(other[i].title+" BY "+other[i].author+" | "+other[i].length+" PAGES");
+			console.log("GENRE: "+other[i].genre);
+		}
+
+
 
 	}
 		
