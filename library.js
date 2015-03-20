@@ -257,6 +257,26 @@ var Library = {
 
 	},
 
+	sortByCheckout: function(){
+		var inv = this.inventory;
+		var booksOut = [];
+		var booksIn = [];
+
+		for (var i = 0;i < inv.length; i++){
+			if (inv[i].checkedOut === false)
+				booksIn.push(inv[i]);
+			else
+				booksOut.push(inv[i]);
+		}
+
+		this.displayAvailability(booksIn, booksOut);
+	},
+
+	displayAvailability: function(booksIn, booksOut){
+		console.log("AVAILABLE BOOKS TO CHECK OUT: ");
+		
+	},
+
 	initBooks: function(){
 		var possibleTitles = ["How To Program", "The ABC's of Painting Stuff", "How I Learned to Fly: a Memoir", "Bananas", "I Like Parakeets, and So Can You", "The Butler Did It"];
 		var possibleAuthors = ["Bob Dole", "John Doe", "Jane Deere", "Sam Handwich", "Neal Gaiman"];
