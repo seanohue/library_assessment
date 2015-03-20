@@ -117,7 +117,7 @@ var Library = {
 			else
 			{
 				console.log("YOUR CHOICE WAS NOT VALID. TRY AGAIN.");
-				removeBookMenu();
+				this.removeBookMenu();
 			}
 		}
 		this.mainMenu();
@@ -149,7 +149,7 @@ var Library = {
 			if (inv[i].genre.toLowerCase() === 'fiction'){
 				fiction.push(inv[i]);	
 			} 
-			else if(inv[i].genre.toLowerCase() === ('nonfiction' || 'non-fiction')){
+			else if(inv[i].genre.toLowerCase() === 'nonfiction' || inv[i].genre.toLowerCase() === 'non-fiction'){
 			
 				nonfiction.push(inv[i]);
 			} 
